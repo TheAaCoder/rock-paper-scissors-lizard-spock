@@ -38,5 +38,10 @@ def getComputerChoice():
 def getWinner(comp, player):
     if comp in rules.wins_against[player]:
         print("Player Wins!")
+        print("This is because: " + rules.explanation[(player,comp)])
+    elif comp == player:
+        print("It's a tie!")
     else:
         print("Computer Wins!")
+        print("This is because: " + rules.explanation[(comp,player)])
+
