@@ -1,4 +1,5 @@
 from random import randint
+import rules
 choices = ["rock", "paper", "scissors", "lizard", "spock"]
 def displayInstructions():
     if not displayInstructions.called:
@@ -33,3 +34,9 @@ def getUserChoice():
 
 def getComputerChoice():
     return choices[randint(0,4)]
+
+def getWinner(comp, player):
+    if comp in rules.wins_against[player]:
+        print("Player Wins!")
+    else:
+        print("Computer Wins!")

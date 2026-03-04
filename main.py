@@ -10,6 +10,7 @@ def main():
     computerChoice = getComputerChoice()
     print("User Choice:",userChoice)
     print("Computer Choice:", computerChoice)
+    getWinner(computerChoice,userChoice)
     print("Thanks for playing!")
 
 if __name__ == "__main__":
