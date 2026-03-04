@@ -1,5 +1,5 @@
 import rps
-from rps import displayInstructions, getUserChoice
+from rps import *
 
 
 def main():
@@ -7,7 +7,9 @@ def main():
     rps.displayInstructions.called = False
     displayInstructions()
     userChoice = getUserChoice()
-    print(userChoice)
+    computerChoice = getComputerChoice()
+    print("User Choice:",userChoice)
+    print("Computer Choice:", computerChoice)
     print("Thanks for playing!")
 
 if __name__ == "__main__":

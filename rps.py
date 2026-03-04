@@ -1,3 +1,4 @@
+from random import randint
 choices = ["rock", "paper", "scissors", "lizard", "spock"]
 def displayInstructions():
     if not displayInstructions.called:
@@ -29,3 +30,6 @@ def getUserChoice():
         if choice not in choices:
             print("Invalid Choice. Try again.")
     return choice
+
+def getComputerChoice():
+    return choices[randint(0,4)]
