@@ -17,3 +17,7 @@ Spock vaporizes Rock
         """)
         print("You are playing against the computer.")
         displayInstructions.called = True
+
+def getUserChoice():
+    choice = input("Choose either Rock, Paper, Scissors, or Spock: ")
+    return choice
