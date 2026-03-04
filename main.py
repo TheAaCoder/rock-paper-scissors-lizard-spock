@@ -8,8 +8,7 @@ def main():
     displayInstructions()
     userChoice = getUserChoice()
     computerChoice = getComputerChoice()
-    print("User Choice:",userChoice)
-    print("Computer Choice:", computerChoice)
+    print("The computer chose: " + computerChoice +".")
     getWinner(computerChoice,userChoice)
     print("Thanks for playing!")
 
