@@ -1,5 +1,6 @@
 from random import randint
-import os
+from time import sleep
+
 import rules
 choices = ["rock", "paper", "scissors", "lizard", "spock"]
 def displayInstructions():
@@ -22,13 +23,14 @@ Spock vaporizes Rock
 """
             )
         print("You are playing against the computer.")
+
         displayInstructions.called = True
 
 def getUserChoice():
     choice = ""
 
     while choice not in choices:
-        choice = input("Choose either Rock, Paper, Scissors, or Spock: ").lower()
+        choice = input("Choose either Rock, Paper, Scissors, Lizard, or Spock: ").lower()
         if choice not in choices:
             print("Invalid Choice. Try again.")
     return choice
@@ -48,3 +50,18 @@ def getWinner(comp, player):
         print("Computer Wins!")
         print("This is because: " + rules.explanation[(comp,player)])
         return "Computer"
+
+def shoot(waitTime):
+    print("Rock.", end=" ")
+    sleep(waitTime)
+    print("Paper.", end=" ")
+    sleep(waitTime)
+    print("Scissors.", end=" ")
+    sleep(waitTime)
+    print("Lizard.", end=" ")
+    sleep(waitTime)
+    print("Spock.", end=" ")
+    sleep(waitTime)
+    print("Shoot!", end="")
+    sleep(waitTime)
+    print()

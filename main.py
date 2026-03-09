@@ -3,14 +3,18 @@ from rps import *
 
 
 def main():
+
     computerScore = 0
     playerScore = 0
     keepPlaying = True
     rps.displayInstructions.called = False
     displayInstructions()
     while keepPlaying:
+
         userChoice = getUserChoice()
+
         computerChoice = getComputerChoice()
+        shoot(0.5)
         print("The computer chose: " + computerChoice +".")
         winner = getWinner(computerChoice,userChoice)
         if winner == "Player":
