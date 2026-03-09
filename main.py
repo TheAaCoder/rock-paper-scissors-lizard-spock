@@ -1,4 +1,4 @@
-import rps
+
 from rps import *
 
 
@@ -7,7 +7,6 @@ def main():
     computerScore = 0
     playerScore = 0
     keepPlaying = True
-    rps.displayInstructions.called = False
     displayInstructions()
     while keepPlaying:
 

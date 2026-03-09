@@ -1,12 +1,16 @@
 from random import randint
 from time import sleep
-
 import rules
 choices = ["rock", "paper", "scissors", "lizard", "spock"]
+
 def displayInstructions():
-    if not displayInstructions.called:
-        print("This is the game rock, paper, scissors, lizard, spock.")
-        print(
+    """
+    Displays Instructions for the game rock, paper, scissors, lizard, spock.
+    :return:
+    """
+
+    print("This is the game rock, paper, scissors, lizard, spock.")
+    print(
 """
 These are the rules:
 
@@ -21,12 +25,17 @@ Paper disproves Spock
 Spock vaporizes Rock
 (and as it always has) Rock crushes Scissors
 """
-            )
-        print("You are playing against the computer.")
+        )
+    print("You are playing against the computer.")
 
-        displayInstructions.called = True
+
 
 def getUserChoice():
+    """
+    Gets user choice from input and validates it against answers, reprompting if necessary
+    :returns: User Choice is Returned
+    :rtype: str
+    """
     choice = ""
 
     while choice not in choices:
@@ -36,9 +45,21 @@ def getUserChoice():
     return choice
 
 def getComputerChoice():
+    """
+    Gets randomly generated choice for the CPU
+    :returns: Computer Choice
+    :rtype: str
+    """
     return choices[randint(0,4)]
 
 def getWinner(comp, player):
+    """
+    Compares both player choices against the rules dictionary and determines the winner
+    :param comp:
+    :param player:
+    :return: Winner
+    :rtype: str
+    """
     if comp in rules.wins_against[player]:
         print("Player Wins!")
         print("This is because: " + rules.explanation[(player,comp)])
@@ -52,6 +73,11 @@ def getWinner(comp, player):
         return "Computer"
 
 def shoot(waitTime):
+    """
+    Displays all five options in order 1 second at a time
+    :param waitTime:
+    :return:
+    """
     print("Rock.", end=" ")
     sleep(waitTime)
     print("Paper.", end=" ")
