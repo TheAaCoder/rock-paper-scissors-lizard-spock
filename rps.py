@@ -1,4 +1,5 @@
 from random import randint
+import os
 import rules
 choices = ["rock", "paper", "scissors", "lizard", "spock"]
 def displayInstructions():
@@ -39,9 +40,15 @@ def getWinner(comp, player):
     if comp in rules.wins_against[player]:
         print("Player Wins!")
         print("This is because: " + rules.explanation[(player,comp)])
+        return "Player"
     elif comp == player:
         print("It's a tie!")
+        return None
     else:
         print("Computer Wins!")
         print("This is because: " + rules.explanation[(comp,player)])
+        return "Computer"
 
+def clear_screen():
+    # 'cls' for Windows, 'clear' for Linux/macOS
+    os.system('cls' if os.name == 'nt' else 'clear')
