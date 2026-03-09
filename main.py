@@ -20,7 +20,6 @@ def main():
         else:
             computerScore += 1
             playerScore += 1
-
         print(f"Computer: {computerScore}\nPlayer: {playerScore}")
         playAgain = input("Would you like to keep playing?[y/n] ")
 
@@ -29,6 +28,7 @@ def main():
 
         if playAgain[0].lower() == 'n':
             keepPlaying = False
+
     print("\nFinal Score")
     print(f"Computer: {computerScore}\nPlayer: {playerScore}")
     print()

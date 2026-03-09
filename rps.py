@@ -48,7 +48,3 @@ def getWinner(comp, player):
         print("Computer Wins!")
         print("This is because: " + rules.explanation[(comp,player)])
         return "Computer"
-
-def clear_screen():
-    # 'cls' for Windows, 'clear' for Linux/macOS
-    os.system('cls' if os.name == 'nt' else 'clear')
